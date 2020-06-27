@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>
+<title>Student Registration Form</title>
+<style>
+    input[type=submit] {
+  background-color: #00004d;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+  </style>
+<script>
+function validateForm() 
+{
+  var course=array();
+  var course[0] = document.getElementById('IT').value;
+  var course[1] = document.getElementById('CSE').value;
+  var course[2] = document.getElementById('ME').value;
+  var course[3] = document.getElementById('CE').value;
+  var course[4] = document.getElementById('EEE').value;
+  var course[5] = document.getElementById('ECE').value;
+  for(var i=0;i<5;i++)
+  {
+    for(var j=i+1;j<6;j++)
+    {
+      if(course[i]==course[j])
+      {
+        alert("REPETITION OF PRIORITY ORDER!!");
+          return false;
+        
+      }
+    }
+  }
+  return true;
+}
+</script>
+</head>
+ 
+<body>
+<h1><center><font color=" #00004d">NEW REGISTRATION FORM </h1>
+<form name="myForm" action="processnewreg.php" onsubmit="return validateForm()" method="POST">
+<table align="center" cellpadding = "10" style="font-size: 20px;">
+ 
+<!----- Name ---------------------------------------------------------->
+<tr>
+<td> NAME</td>
+<td><input type="text" name="name" required />
+</td>
+</tr>
+ 
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+<tr>
+<td>DATE OF BIRTH</td>
+ 
+<td>
+<input type="date" name="dob" required>
+</td>
+</tr>
+<!----- Gender ----------------------------------------------------------->
+<tr>
+<td>GENDER</td>
+<td>
+<input type="radio" name="Gender" value="Male" required />Male<br>
+<input type="radio" name="Gender" value="Female" />Female<br>
+<input type="radio" name="Gender" value="Other" />Other<br>
+</td>
+</td>
+</tr>
+
+<!---------DISABILITY-------------------------------->
+<tr>
+<td>ARE YOU DIFFERENTLY ABLED?</td>
+<td>
+<input type="radio" name="reservation" value='Yes' required/>Yes<br>
+<input type="radio" name="reservation" value='No' />No<br>
+</td>
+</tr>
+
+<!----- Address ---------------------------------------------------------->
+<tr>
+<td>PERMANENT ADDRESS <br /><br /><br /></td>
+<td><textarea name="address" rows="4" cols="30" required></textarea></td>
+</tr>
+ 
+<!----- ACADEMIC---------------------------------------------------------->
+
+
+ 
+ 
+<tr>
+<td>SCHOOL NAME</td>
+<td><input type="text" name="school" maxlength="50" required /></td>
+
+</tr>
+ 
+<tr>
+<td>HIGH SCHOOL SCORE(out of 100)</td>
+<td><input type="numer" name="score"   required /></td>
+</tr>
+ 
+<tr>
+<td>REGISTRATION ID</td>
+<td><input type="number" name="regno"  required  /></td>
+</tr>
+ 
+
+ 
+<!-----------------TABLE-------------------------->
+
+  <tr>
+    <th>COURSE</th>
+    <th>PRIORITY</th>
+  </tr>
+  <tr>
+    <td>INFORMATION TECHNOLOGY</td>
+    <td><center>
+      <select name="IT" id="IT" required >
+        <option value="1" selected>1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </center>
+    </td>
+    
+  </tr>
+  <tr>
+    <td>COMPUER SCIENCE ENGINEERING</td>
+    <td><center>
+      <select name="CSE"  id="CSE" required>
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </center></td>
+    
+  </tr>
+  <tr>
+    <td>MECHANICAL ENGINEERING</td>
+    <td><center>
+    <select name="ME" id="ME" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </center></td>
+    
+  </tr>
+  <tr>
+    <td>CIVIL ENGINEERING</td>
+    <td><center>
+      <select name="CE" id="CE" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </center></td>
+    
+  </tr>
+    <tr> 
+	<td>ELECTRICAL AND ELECTRONICS ENGINEERING</td>
+    <td><center>
+      <select name="EEE" id="EEE" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5" selected>5</option>
+        <option value="6">6</option>
+      </select>
+    </center></td>
+     </tr>
+	 <tr>
+	 <td>ELECTRONICS AND COMMUNICATION ENGINEERING</td>
+	 <td><center>
+    <select name="ECE" id="ECE" required>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6" selected>6</option>
+      </select>
+    </center></td>
+	 </tr>
+	 
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+
+</td>
+</tr>
+</table>
+ 
+</form>
+ 
+</body>
+</html>
